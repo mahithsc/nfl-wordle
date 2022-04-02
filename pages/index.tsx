@@ -13,6 +13,7 @@ const Home:NextPage = () => {
         <img src="https://a.espncdn.com/i/headshots/nfl/players/full/4241464.png" className='flex-1 brightness-0'/>
         <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0 opacity-100'></div>
       </div>
+
     </div>
   )
 }
