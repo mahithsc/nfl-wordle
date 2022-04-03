@@ -101,6 +101,14 @@ const Home: NextPage = () => {
         <div>{JSON.stringify(choiceSix.name)}</div>
         <div>{JSON.stringify(choiceSeven.name)}</div>
         <div>{JSON.stringify(choiceEight.name)}</div> */}
+        <PlayerBox player={choice} />
+        <PlayerBox player={choiceTwo} />
+        <PlayerBox player={choiceThree} />
+        <PlayerBox player={choiceFour} />
+        <PlayerBox player={choiceFive} />
+        <PlayerBox player={choiceSix} />
+        <PlayerBox player={choiceSeven} />
+        <PlayerBox player={choiceEight} />
 
       </div>
 

@@ -6,7 +6,7 @@ interface Props {
 
 const PlayerBox:React.FC<Props> = ({player}) => {
   return (
-    <div>{JSON.stringify(player)}</div>
+    <div>{player.name}</div>
   )
 }
 
