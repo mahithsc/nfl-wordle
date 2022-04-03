@@ -10,8 +10,12 @@ import { positions } from '@mui/system';
 import PlayerBox from '../components/PlayerBox';
 
 const Home: NextPage = () => {
+
+  
   //importing all the players from the JSON file
   const players = require('../assets/players_datbase.json')
+  
+  const [playerOfTheDay, setPlayerOfTheDay] = useState(players[50]);
 
   //keps track of the number of picks the user has made
   const [numberOfPicks, setNumberOfPicks] = useState(0)
@@ -59,11 +63,17 @@ const Home: NextPage = () => {
 
   return (
     <div>
+
+
       <div className='bg-slate-900 flex justify-center'>
         <div className='text-3xl text-white my-5'>Godell</div>
       </div>
+
+
+
+
       <div className='items-center flex flex-col relative'>
-        <img src={players[2].photo} className='flex-1 brightness-[0]' width={500} />
+        <img src={playerOfTheDay.photo} className='flex-1 brightness-[0]' width={500} />
         <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
       </div>
       <div className='flex flex-col items-center mt-11'>
@@ -83,7 +93,6 @@ const Home: NextPage = () => {
             changeStateFunc(numberOfPicks, newValue)
           }}
 
-          sx={{ width: 300 }}
           renderInput={(params) => <TextField {...params} />
           }
         />):null
@@ -92,15 +101,7 @@ const Home: NextPage = () => {
         
       </div>
 
-      <div className='flex flex-col items-center'>
-        {/* <div>{JSON.stringify(choice.name)}</div>
-        <div>{JSON.stringify(choiceTwo.name)}</div>
-        <div>{JSON.stringify(choiceThree.name)}</div>
-        <div>{JSON.stringify(choiceFour.name)}</div>
-        <div>{JSON.stringify(choiceFive.name)}</div>
-        <div>{JSON.stringify(choiceSix.name)}</div>
-        <div>{JSON.stringify(choiceSeven.name)}</div>
-        <div>{JSON.stringify(choiceEight.name)}</div> */}
+      <div className='flex flex-col items-center bg-slate-500 mt-10'>
         <PlayerBox player={choice} />
         <PlayerBox player={choiceTwo} />
         <PlayerBox player={choiceThree} />
