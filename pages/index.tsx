@@ -15,12 +15,6 @@ const Home: NextPage = () => {
   //importing all the players from the JSON file
   const players = require('../assets/players_datbase.json')
 
-  //state varibale for the player of the day
-  const [playerOfTheDay, setPlayerOfTheDay] = useState(players[0]);
-
-  //keps track of the number of picks the user has made
-  const [numberOfPicks, setNumberOfPicks] = useState(0)
-
   //state variables for the players
   const [choice, setChoice]: any = useState('')
   const [choiceTwo, setChoiceTwo]: any = useState('hello')
@@ -30,6 +24,15 @@ const Home: NextPage = () => {
   const [choiceSix, setChoiceSix]: any = useState('hello')
   const [choiceSeven, setChoiceSeven]: any = useState('hello')
   const [choiceEight, setChoiceEight]: any = useState('hello')
+
+  //state varibale for the player of the day
+  const [playerOfTheDay, setPlayerOfTheDay] = useState(players[0]);
+
+  //keps track of the number of picks the user has made
+  const [numberOfPicks, setNumberOfPicks] = useState(0)
+
+  //state variable for checking wether the user got the correct answer
+  const [correct, setCorrect] = useState(false)
 
   //function which decides which state variable to changfe based on the number of picks
   const changeStateFunc = (numberOfIterations: number, value: string | null) => {
