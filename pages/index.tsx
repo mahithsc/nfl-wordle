@@ -8,6 +8,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import { ClassNames } from '@emotion/react';
 import { positions } from '@mui/system';
 import PlayerBox from '../components/PlayerBox';
+import Title from '../components/Title';
 
 const Home: NextPage = () => {
 
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
   //importing all the players from the JSON file
   const players = require('../assets/players_datbase.json')
   
+  //state varibale for the player of the day
   const [playerOfTheDay, setPlayerOfTheDay] = useState(players[50]);
 
   //keps track of the number of picks the user has made
@@ -57,20 +59,10 @@ const Home: NextPage = () => {
     setNumberOfPicks(picks => picks + 1)
   }, [choice, choiceTwo, choiceThree, choiceFour, choiceFive, choiceSix, choiceSeven, choiceEight])
 
-  useEffect(() => {
-    console.log(numberOfPicks)
-  } , [numberOfPicks])
-
   return (
     <div>
 
-
-      <div className='bg-slate-900 flex justify-center'>
-        <div className='text-3xl text-white my-5'>Godell</div>
-      </div>
-
-
-
+      <Title/>
 
       <div className='items-center flex flex-col relative'>
         <img src={playerOfTheDay.photo} className='flex-1 brightness-[0]' width={500} />
