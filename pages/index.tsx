@@ -7,6 +7,7 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { ClassNames } from '@emotion/react';
 import { positions } from '@mui/system';
+import PlayerBox from '../components/PlayerBox';
 
 const Home: NextPage = () => {
   //importing all the players from the JSON file
@@ -92,14 +93,15 @@ const Home: NextPage = () => {
       </div>
 
       <div className='flex flex-col items-center'>
-        <div>{JSON.stringify(choice.name)}</div>
+        {/* <div>{JSON.stringify(choice.name)}</div>
         <div>{JSON.stringify(choiceTwo.name)}</div>
         <div>{JSON.stringify(choiceThree.name)}</div>
         <div>{JSON.stringify(choiceFour.name)}</div>
         <div>{JSON.stringify(choiceFive.name)}</div>
         <div>{JSON.stringify(choiceSix.name)}</div>
         <div>{JSON.stringify(choiceSeven.name)}</div>
-        <div>{JSON.stringify(choiceEight.name)}</div>
+        <div>{JSON.stringify(choiceEight.name)}</div> */}
+
       </div>
 
 
