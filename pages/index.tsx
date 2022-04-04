@@ -55,6 +55,14 @@ const Home: NextPage = () => {
     }
   }
 
+  const changeCorrectFalse = () => {
+    setCorrect(false)
+  }
+
+  const changeCorrectTrue = () => {
+    setCorrect(true)
+  }
+
   useEffect(() => {
     setNumberOfPicks(picks => picks + 1)
   }, [choice, choiceTwo, choiceThree, choiceFour, choiceFive, choiceSix, choiceSeven, choiceEight])
