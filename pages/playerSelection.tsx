@@ -31,7 +31,8 @@ const playerSelection = () => {
                 />
 
                 <div className='items-center flex flex-col relative'>
-                    {(choice === null) ? <img src={'https://static.clubs.nfl.com/image/private/t_editorial_squared_6_desktop/f_png/v1571889300/nfl100/fnn6lnf5f2pl7uj9jjyu.png'} className={`${true ? 'brightness-[1]' : 'brightness-[0]'}'flex-1 '`} width={400} /> : <img src={choice?.photo} className={`${true ? 'brightness-[1]' : 'brightness-[0]'}'flex-1 '`} width={500} />}
+                    {(choice === null) ? 
+                    <img src={'https://static.clubs.nfl.com/image/private/t_editorial_squared_6_desktop/f_png/v1571889300/nfl100/fnn6lnf5f2pl7uj9jjyu.png'} className={`${true ? 'brightness-[1]' : 'brightness-[0]'}'flex-1 '`} width={400} /> : <img src={choice?.photo} className={`${true ? 'brightness-[1]' : 'brightness-[0]'}'flex-1 '`} width={500} />}
                     <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
                 </div>
                 <button className='border-2 border-slate-900 hover:bg-slate-900 hover:text-white' onClick={() => {

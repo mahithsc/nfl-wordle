@@ -32,7 +32,7 @@ const Home: NextPage = () => {
   const [numberOfPicks, setNumberOfPicks] = useState(0)
 
   //state variable for checking wether the user got the correct answer
-  const [correct, setCorrect] = useState(false)
+  const [correct, setCorrect] = useState(true)
 
   //function which decides which state variable to changfe based on the number of picks
   const changeStateFunc = (numberOfIterations: number, value: string | null) => {
@@ -87,7 +87,7 @@ const Home: NextPage = () => {
 
       <div className='flex flex-1 flex-col'>
         <div className='items-center flex flex-col relative'>
-          <img src={playerOfTheDay.photo} className={`${correct?'brightness-[1]':'brightness-[0]'}'flex-1 '`} width={500} />
+          <img src={playerOfTheDay.photo} className={`${correct? 'brightness-1':'brightness-0'}`} width={500} />
           <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
         </div>
 
@@ -116,3 +116,5 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+// `${correct?'brightness-1':'brightness-0'}'flex-1 '`
