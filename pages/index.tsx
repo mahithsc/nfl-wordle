@@ -85,14 +85,14 @@ const Home: NextPage = () => {
 
       </div>
 
-      <div className='flex flex-1 flex-col md:flex-row'>
+      <div className='flex flex-1 flex-col'>
         <div className='items-center flex flex-col relative'>
           <img src={playerOfTheDay.photo} className='flex-1 brightness-[0]' width={500} />
           <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
         </div>
 
 
-        <div className='flex flex-col mt-10 flex-1'>
+        <div className='flex flex-col mt-10 flex-1 items-center'>
           <PlayerBox player={choice} playerOfTheDay = {playerOfTheDay} />
           <PlayerBox player={choiceTwo} playerOfTheDay = {playerOfTheDay} />
           <PlayerBox player={choiceThree} playerOfTheDay = {playerOfTheDay} />
