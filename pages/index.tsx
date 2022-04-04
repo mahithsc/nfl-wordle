@@ -16,14 +16,14 @@ const Home: NextPage = () => {
   const players = require('../assets/players_datbase.json')
 
   //state variables for the players
-  const [choice, setChoice]: any = useState('')
-  const [choiceTwo, setChoiceTwo]: any = useState('hello')
-  const [choiceThree, setChoiceThree]: any = useState('hello')
-  const [choiceFour, setChoiceFour]: any = useState('hello')
-  const [choiceFive, setChoiceFive]: any = useState('hello')
-  const [choiceSix, setChoiceSix]: any = useState('hello')
-  const [choiceSeven, setChoiceSeven]: any = useState('hello')
-  const [choiceEight, setChoiceEight]: any = useState('hello')
+  const [choice, setChoice]: any = useState(null)
+  const [choiceTwo, setChoiceTwo]: any = useState(null)
+  const [choiceThree, setChoiceThree]: any = useState(null)
+  const [choiceFour, setChoiceFour]: any = useState(null)
+  const [choiceFive, setChoiceFive]: any = useState(null)
+  const [choiceSix, setChoiceSix]: any = useState(null)
+  const [choiceSeven, setChoiceSeven]: any = useState(null)
+  const [choiceEight, setChoiceEight]: any = useState(null)
 
   //state varibale for the player of the day
   const [playerOfTheDay, setPlayerOfTheDay] = useState(players[0]);
@@ -93,15 +93,14 @@ const Home: NextPage = () => {
 
 
         <div className='flex flex-col mt-10 flex-1 items-center'>
-          <PlayerBox player={choice} playerOfTheDay = {playerOfTheDay} />
-          <PlayerBox player={choiceTwo} playerOfTheDay = {playerOfTheDay} />
-          <PlayerBox player={choiceThree} playerOfTheDay = {playerOfTheDay} />
-          <PlayerBox player={choiceFour} playerOfTheDay = {playerOfTheDay} />
-          <PlayerBox player={choiceFive} playerOfTheDay = {playerOfTheDay} />
-          <PlayerBox player={choiceSix} playerOfTheDay = {playerOfTheDay} />
-          <PlayerBox player={choiceSeven} playerOfTheDay = {playerOfTheDay} />
-          <PlayerBox player={choiceEight} playerOfTheDay = {playerOfTheDay} />
-
+          {(choice === null) ? null : (<PlayerBox player={choice} playerOfTheDay={playerOfTheDay} />)}
+          {(choiceTwo === null) ? null : (<PlayerBox player={choiceTwo} playerOfTheDay={playerOfTheDay} />)}
+          {(choiceThree === null) ? null : (<PlayerBox player={choiceThree} playerOfTheDay={playerOfTheDay} />)}
+          {(choiceFour === null) ? null : (<PlayerBox player={choiceFour} playerOfTheDay={playerOfTheDay} />)}
+          {(choiceFive === null) ? null : (<PlayerBox player={choiceFive} playerOfTheDay={playerOfTheDay} />)}
+          {(choiceSix === null) ? null : (<PlayerBox player={choiceSix} playerOfTheDay={playerOfTheDay} />)}
+          {(choiceSeven === null) ? null : (<PlayerBox player={choiceSeven} playerOfTheDay={playerOfTheDay} />)}
+          {(choiceEight === null) ? null : (<PlayerBox player={choiceEight} playerOfTheDay={playerOfTheDay} />)}
         </div>
 
       </div>

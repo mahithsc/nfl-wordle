@@ -8,9 +8,13 @@ interface Props {
 const PlayerBox:React.FC<Props> = ({player, playerOfTheDay}) => {
   return (
     // <div>{player.name}</div>
-    <div className='flex'>
-        <div>{player?.name}</div>
-        {(player?.name === playerOfTheDay?.name) ?(<div> correct</div>) : null}
+    <div className='grid grid-cols-4 gap-10'>
+      <div>{player?.name}</div>
+        {/* <div>{player?.name}</div> */}
+        <div>{player.playerPosition}</div>
+        <div>{player.team}</div>
+        <div>something</div>
+
     </div>
   )
 }
