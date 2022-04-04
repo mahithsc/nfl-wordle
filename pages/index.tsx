@@ -63,6 +63,7 @@ const Home: NextPage = () => {
     setCorrect(true)
   }
 
+  //changing the number of picks made
   useEffect(() => {
     setNumberOfPicks(picks => picks + 1)
   }, [choice, choiceTwo, choiceThree, choiceFour, choiceFive, choiceSix, choiceSeven, choiceEight])
