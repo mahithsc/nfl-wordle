@@ -26,7 +26,7 @@ const Home: NextPage = () => {
   const [choiceEight, setChoiceEight]: any = useState(null)
 
   //state varibale for the player of the day
-  const [playerOfTheDay, setPlayerOfTheDay] = useState(players[0]);
+  const [playerOfTheDay, setPlayerOfTheDay] = useState(players[12]);
 
   //keps track of the number of picks the user has made
   const [numberOfPicks, setNumberOfPicks] = useState(0)
@@ -104,6 +104,7 @@ const Home: NextPage = () => {
             {(choiceEight === null) ? null : (<PlayerBox player={choiceEight} playerOfTheDay={playerOfTheDay} />)}
           </div>
         </div>
+
       </div>
 
 
