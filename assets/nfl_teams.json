@@ -1,1 +1,131 @@
 
+{
+    "Bills": {
+        "confrence": "AFC",
+        "division": "East"
+    },
+    "Dolphins": {
+        "confrence": "AFC",
+        "division": "East"
+    },
+    "Jets": {
+        "confrence": "AFC",
+        "division": "East"
+    },
+    "Patriots": {
+        "confrence": "AFC",
+        "division": "East"
+    },
+    "Broncos": {
+        "confrence": "AFC",
+        "division": "West"
+    },
+    "Raiders": {
+        "confrence": "AFC",
+        "division": "West"
+    },
+    "Chargers": {
+        "confrence": "AFC",
+        "division": "West"
+    },
+    "Chiefs": {
+        "confrence": "AFC",
+        "division": "West"
+    },
+    "Steelers": {
+        "confrence": "AFC",
+        "division": "North"
+    },
+    "Browns": {
+        "confrence": "AFC",
+        "division": "North"
+    },
+    "Ravens": {
+        "confrence": "AFC",
+        "division": "North"
+    },
+    "Bengals": {
+        "confrence": "AFC",
+        "division": "North"
+    },
+    "Texans": {
+        "confrence": "AFC",
+        "division": "South"
+    },
+    "Colts": {
+        "confrence": "AFC",
+        "division": "South"
+    },
+    "Jaguars": {
+        "confrence": "AFC",
+        "division": "South"
+    },
+    "Titans": {
+        "confrence": "AFC",
+        "division": "South"
+    },
+    "Packers": {
+        "confrence": "NFC",
+        "division": "North"
+    },
+    "Lions": {
+        "confrence": "NFC",
+        "division": "North"
+    },
+    "Vikings": {
+        "confrence": "NFC",
+        "division": "North"
+    },
+    "Bears": {
+        "confrence": "NFC",
+        "division": "North"
+    },
+    "Falcons": {
+        "confrence": "NFC",
+        "division": "South"
+    },
+    "Panthers": {
+        "confrence": "NFC",
+        "division": "South"
+    },
+    "Saints": {
+        "confrence": "NFC",
+        "division": "South"
+    },
+    "Buccaneers": {
+        "confrence": "NFC",
+        "division": "South"
+    },
+    "Cowboys": {
+        "confrence": "NFC",
+        "division": "East"
+    },
+    "Giants": {
+        "confrence": "NFC",
+        "division": "East"
+    },
+    "Eagles": {
+        "confrence": "NFC",
+        "division": "East"
+    },
+    "Commanders": {
+        "confrence": "NFC",
+        "division": "East"
+    },
+    "49ers": {
+        "confrence": "NFC",
+        "division": "West"
+    },
+    "Seahawks": {
+        "confrence": "NFC",
+        "division": "West"
+    },
+    "Rams": {
+        "confrence": "NFC",
+        "division": "West"
+    },
+    "Cardinals": {
+        "confrence": "NFC",
+        "division": "West"
+    }
+}
