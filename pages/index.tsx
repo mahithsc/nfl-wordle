@@ -87,7 +87,7 @@ const Home: NextPage = () => {
 
       <div className='flex flex-1 flex-col'>
         <div className='items-center flex flex-col relative'>
-          <img src={playerOfTheDay.photo} className='flex-1 brightness-[0]' width={500} />
+          <img src={playerOfTheDay.photo} className={`${correct?'brightness-[1]':'brightness-[0]'}'flex-1 '`} width={500} />
           <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
         </div>
 
