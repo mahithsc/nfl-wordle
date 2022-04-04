@@ -32,7 +32,7 @@ const Home: NextPage = () => {
   const [numberOfPicks, setNumberOfPicks] = useState(0)
 
   //state variable for checking wether the user got the correct answer
-  const [correct, setCorrect] = useState(true)
+  const [correct, setCorrect] = useState(false)
 
   //function which decides which state variable to changfe based on the number of picks
   const changeStateFunc = (numberOfIterations: number, value: string | null) => {
@@ -55,10 +55,6 @@ const Home: NextPage = () => {
     }
   }
 
-  const changeCorrectFalse = () => {
-    setCorrect(false)
-  }
-
   const changeCorrectTrue = () => {
     setCorrect(true)
   }
@@ -75,7 +71,7 @@ const Home: NextPage = () => {
 
       <div className='flex flex-col items-center mt-11'>
 
-        {(numberOfPicks <= 8) ?
+        {((numberOfPicks <= 8)&& correct === false) ?
           (<Autocomplete
             className='w-[35rem]'
             disablePortal
@@ -103,14 +99,14 @@ const Home: NextPage = () => {
 
         <div className='flex flex-col mt-10 flex-1 items-center'>
           <div>
-            {(choice === null) ? null : (<PlayerBox player={choice} playerOfTheDay={playerOfTheDay} />)}
-            {(choiceTwo === null) ? null : (<PlayerBox player={choiceTwo} playerOfTheDay={playerOfTheDay} />)}
-            {(choiceThree === null) ? null : (<PlayerBox player={choiceThree} playerOfTheDay={playerOfTheDay} />)}
-            {(choiceFour === null) ? null : (<PlayerBox player={choiceFour} playerOfTheDay={playerOfTheDay} />)}
-            {(choiceFive === null) ? null : (<PlayerBox player={choiceFive} playerOfTheDay={playerOfTheDay} />)}
-            {(choiceSix === null) ? null : (<PlayerBox player={choiceSix} playerOfTheDay={playerOfTheDay} />)}
-            {(choiceSeven === null) ? null : (<PlayerBox player={choiceSeven} playerOfTheDay={playerOfTheDay} />)}
-            {(choiceEight === null) ? null : (<PlayerBox player={choiceEight} playerOfTheDay={playerOfTheDay} />)}
+            {(choice === null) ? null : (<PlayerBox player={choice} playerOfTheDay={playerOfTheDay} changeStateTrue={changeCorrectTrue} />)}
+            {(choiceTwo === null) ? null : (<PlayerBox player={choiceTwo} playerOfTheDay={playerOfTheDay}  changeStateTrue={changeCorrectTrue}/>)}
+            {(choiceThree === null) ? null : (<PlayerBox player={choiceThree} playerOfTheDay={playerOfTheDay}  changeStateTrue={changeCorrectTrue}/>)}
+            {(choiceFour === null) ? null : (<PlayerBox player={choiceFour} playerOfTheDay={playerOfTheDay}  changeStateTrue={changeCorrectTrue}/>)}
+            {(choiceFive === null) ? null : (<PlayerBox player={choiceFive} playerOfTheDay={playerOfTheDay}  changeStateTrue={changeCorrectTrue}/>)}
+            {(choiceSix === null) ? null : (<PlayerBox player={choiceSix} playerOfTheDay={playerOfTheDay}  changeStateTrue={changeCorrectTrue}/>)}
+            {(choiceSeven === null) ? null : (<PlayerBox player={choiceSeven} playerOfTheDay={playerOfTheDay} changeStateTrue={changeCorrectTrue} />)}
+            {(choiceEight === null) ? null : (<PlayerBox player={choiceEight} playerOfTheDay={playerOfTheDay}  changeStateTrue={changeCorrectTrue}/>)}
           </div>
         </div>
 
