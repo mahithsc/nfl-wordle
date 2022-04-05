@@ -10,7 +10,7 @@ import { positions } from '@mui/system';
 import PlayerBox from '../components/PlayerBox';
 import Title from '../components/Title';
 
-const playWithFriends = () => {
+const PlayingWithFriends:NextPage = () => {
     const players = require('../assets/players_datbase.json')
 
     //state variables for the players
