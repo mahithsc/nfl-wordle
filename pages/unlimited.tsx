@@ -27,9 +27,6 @@ const unlimited = () => {
   //state varibale for the player of the day
   const [playerOfTheDay, setPlayerOfTheDay] = useState(players[0]);
 
-  //state for the sillhoute
-  const [sillhoute, setSillhoute] = useState(false);
-
   //keps track of the number of picks the user has made
   const [numberOfPicks, setNumberOfPicks] = useState(0)
 
@@ -57,14 +54,37 @@ const unlimited = () => {
     }
   }
 
+  //used int he playerbox component to change the correctness of the answer
   const changeCorrectTrue = () => {
     setCorrect(true)
   }
+
+  //this function creates 
+  const generateNewPlayer = () => {
+    const numberOfPlayers = players.length
+    const index =  (Math.floor(Math.random() * numberOfPlayers))
+    console.log(players[index])
+    return index
+  }
+
+  //when the component is rendered, it generates a new player of the day
+  useEffect(() => {
+    const newPlayer = generateNewPlayer()
+    setPlayerOfTheDay(players[newPlayer])
+  }, [])
 
   //changing the number of picks made
   useEffect(() => {
     setNumberOfPicks(picks => picks + 1)
   }, [choice, choiceTwo, choiceThree, choiceFour, choiceFive, choiceSix, choiceSeven, choiceEight])
+
+  //when the correctness of the answer is changed, this function is called
+  useEffect(() => {
+    if(correct === true){
+      setPlayerOfTheDay(players[generateNewPlayer()])
+      setCorrect(false)
+    }
+  }, [correct])
 
   return (
     <div>
@@ -72,23 +92,23 @@ const unlimited = () => {
       <Title />
 
       <div className='flex flex-col items-center mt-11'>
-        
+
         <Autocomplete
-            disabled = {correct}
-            className='w-[35rem]'
-            disablePortal
-            id="free-solo-demo"
-            options={players}
-            getOptionLabel={(option: any) => option?.name}
+          disabled={correct}
+          className='w-[35rem]'
+          disablePortal
+          id="free-solo-demo"
+          options={players}
+          getOptionLabel={(option: any) => option?.name}
 
-            //when an option is selected, set the state of the choice
-            onChange={(event: any, newValue: string | null) => {
-              changeStateFunc(numberOfPicks, newValue)
-            }}
+          //when an option is selected, set the state of the choice
+          onChange={(event: any, newValue: string | null) => {
+            changeStateFunc(numberOfPicks, newValue)
+          }}
 
-            renderInput={(params) => <TextField {...params} />
-            }
-          />
+          renderInput={(params) => <TextField {...params} />
+          }
+        />
 
       </div>
 
