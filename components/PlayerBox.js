@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 
-interface Props {
-  player: object
-  playerOfTheDay: object,
-  changeStateTrue: () => void,
-  // changeStateFalse: () => void,
-  // correct: boolean
-}
+// interface Props {
+//   player: object
+//   playerOfTheDay: object,
+//   changeStateTrue: () => void,
+//   // changeStateFalse: () => void,
+//   // correct: boolean
+// }
 
-const PlayerBox: React.FC<Props> = ({ player, playerOfTheDay, changeStateTrue }) => {
+const PlayerBox = ({ player, playerOfTheDay, changeStateTrue }) => {
   const teams = require('../assets/nfl_teams.json');
 
   const [age, playerAge] = useState((player.age).substring((player.age).indexOf('(')+1, (player.age).indexOf(')')));
