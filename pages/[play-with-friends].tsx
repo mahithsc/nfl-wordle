@@ -56,6 +56,7 @@ const playWithFriends = () => {
         }
     }
 
+    //this is used in the player box file to change the correctness of the guesse state
     const changeCorrectTrue = () => {
         setCorrect(true)
     }
