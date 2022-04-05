@@ -102,7 +102,7 @@ const Unlimited = () => {
 
         <Autocomplete
           disabled={correct}
-          className='w-[35rem]'
+          className='md:w-[35rem] w-screen mx-1'
           disablePortal
           id="free-solo-demo"
           options={players}
