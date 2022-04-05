@@ -34,7 +34,7 @@ const PlayerSelection = () => {
     )
 }
 
-export default playerSelection
+export default PlayerSelection
 
 {/* <div className=''>
             <Title />
