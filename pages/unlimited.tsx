@@ -61,30 +61,31 @@ const unlimited = () => {
 
   //this function creates 
   const generateNewPlayer = () => {
-    const numberOfPlayers = players.length
-    const index =  (Math.floor(Math.random() * numberOfPlayers))
-    console.log(players[index])
-    return index
+    setChoice(null)
+    setChoiceTwo(null)
+    setChoiceThree(null)
+    setChoiceFour(null)
+    setChoiceFive(null)
+    setChoiceSix(null)
+    setChoiceSeven(null)
+    setChoiceEight(null)
+    setNumberOfPicks(0)
+    setCorrect(false)
+    const val = Math.floor(Math.random() * players.length)
+    console.log(players[val])
+    setPlayerOfTheDay(players[val])
   }
-
-  //when the component is rendered, it generates a new player of the day
-  useEffect(() => {
-    const newPlayer = generateNewPlayer()
-    setPlayerOfTheDay(players[newPlayer])
-  }, [])
 
   //changing the number of picks made
   useEffect(() => {
     setNumberOfPicks(picks => picks + 1)
   }, [choice, choiceTwo, choiceThree, choiceFour, choiceFive, choiceSix, choiceSeven, choiceEight])
 
-  //when the correctness of the answer is changed, this function is called
   useEffect(() => {
-    if(correct === true){
-      setPlayerOfTheDay(players[generateNewPlayer()])
-      setCorrect(false)
+    if (numberOfPicks === 8) {
+      setCorrect(true)
     }
-  }, [correct])
+  })
 
   return (
     <div>
@@ -130,6 +131,11 @@ const unlimited = () => {
           <img src={playerOfTheDay.photo} className={`${correct ? 'brightness-1' : 'brightness-0'}`} width={500} />
           <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
         </div> : null}
+
+        {correct?(<button className='' onClick={() => generateNewPlayer()}>
+          generate new player
+        </button>):null
+        }
 
       </div>
 
