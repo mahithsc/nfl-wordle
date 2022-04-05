@@ -26,7 +26,10 @@ const Home: NextPage = () => {
   const [choiceEight, setChoiceEight]: any = useState(null)
 
   //state varibale for the player of the day
-  const [playerOfTheDay, setPlayerOfTheDay] = useState(players[12]);
+  const [playerOfTheDay, setPlayerOfTheDay] = useState(players[0]);
+
+  //state for the sillhoute
+  const [sillhoute, setSillhoute] = useState(false);
 
   //keps track of the number of picks the user has made
   const [numberOfPicks, setNumberOfPicks] = useState(0)
@@ -91,10 +94,12 @@ const Home: NextPage = () => {
       </div>
 
       <div className='flex flex-1 flex-col'>
-        <div className='items-center flex flex-col relative'>
+
+        {sillhoute?<div className='items-center flex flex-col relative'>
           <img src={playerOfTheDay.photo} className={`${correct? 'brightness-1':'brightness-0'}`} width={500} />
           <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
-        </div>
+        </div>:null}
+        
 
 
         <div className='flex flex-col mt-10 flex-1 items-center'>
