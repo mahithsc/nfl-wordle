@@ -12,9 +12,9 @@ import Title from '../components/Title';
 
 const Home: NextPage = () => {
   return (
-    <div className='flex h-screen w-screen bg-slate-600 items-center justify-center'>
+    <div className='flex flex-col h-screen w-screen bg-slate-600 items-center justify-center'>
       <div className='text-white font-bold'>Waddle</div>
-      <a href=""></a>
+      <a href="/unlimited">something</a>
     </div>
   )  
 }
