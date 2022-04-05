@@ -10,6 +10,7 @@ import { positions } from '@mui/system';
 import PlayerBox from '../components/PlayerBox';
 import Title from '../components/Title';
 import Footer from '../components/Footer';
+import HeaderForPlayerBox from '../components/HeaderForPlayerBox';
 
 const unlimited = () => {
   //importing all the players from the JSON file
@@ -130,6 +131,7 @@ const unlimited = () => {
         }
         <div className='flex flex-col mt-10 flex-1 items-center'>
           <div>
+            {(choice === null)?null: <HeaderForPlayerBox/>}
             {(choice === null) ? null : (<PlayerBox player={choice} playerOfTheDay={playerOfTheDay} changeStateTrue={changeCorrectTrue} />)}
             {(choiceTwo === null) ? null : (<PlayerBox player={choiceTwo} playerOfTheDay={playerOfTheDay} changeStateTrue={changeCorrectTrue} />)}
             {(choiceThree === null) ? null : (<PlayerBox player={choiceThree} playerOfTheDay={playerOfTheDay} changeStateTrue={changeCorrectTrue} />)}
