@@ -12,8 +12,9 @@ import Title from '../components/Title';
 
 const Home: NextPage = () => {
   return (
-    <div>
-      Hello world
+    <div className='flex h-screen w-screen bg-slate-600 items-center justify-center'>
+      <div className='text-white font-bold'>Waddle</div>
+      <a href=""></a>
     </div>
   )  
 }
