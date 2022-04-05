@@ -68,11 +68,9 @@ const playWithFriends = () => {
 
     return (
         <div>
-
             <Title />
 
             <div className='flex flex-col items-center mt-11'>
-
                 <Autocomplete
                     disabled={correct}
                     className='w-[35rem]'
@@ -89,7 +87,6 @@ const playWithFriends = () => {
                     renderInput={(params) => <TextField {...params} />
                     }
                 />
-
             </div>
 
             <div className='flex flex-1 flex-col'>
@@ -105,18 +102,11 @@ const playWithFriends = () => {
                         {(choiceEight === null) ? null : (<PlayerBox player={choiceEight} playerOfTheDay={playerOfTheDay} changeStateTrue={changeCorrectTrue} />)}
                     </div>
                 </div>
-
                 {correct ? <div className='items-center flex flex-col relative'>
                     <img src={playerOfTheDay.photo} className={`${correct ? 'brightness-1' : 'brightness-0'}`} width={500} />
                     <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
                 </div> : null}
-
             </div>
-
-
-
-
-
         </div>
     )
 }
