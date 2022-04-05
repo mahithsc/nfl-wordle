@@ -16,6 +16,7 @@ const Home: NextPage = () => {
       <Title/>
       <div className='flex flex-col h-screen items-center justify-center'>
         <a href="/unlimited" className='text-white hover:underline'>Unlimited ∞</a>
+        <a href="/player-selection" className='text-white hover:underline'>Play With Friends</a>
       </div>
     </div>
   )
