@@ -67,7 +67,14 @@ const playWithFriends = () => {
     }, [choice, choiceTwo, choiceThree, choiceFour, choiceFive, choiceSix, choiceSeven, choiceEight])
 
     return (
-        <div>
+        <div>Coming soon...</div>
+    )
+}
+
+export default playWithFriends
+
+
+{/* <div>
             <Title />
 
             <div className='flex flex-col items-center mt-11'>
@@ -107,8 +114,4 @@ const playWithFriends = () => {
                     <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
                 </div> : null}
             </div>
-        </div>
-    )
-}
-
-export default playWithFriends
+        </div> */}

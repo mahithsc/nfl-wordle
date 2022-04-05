@@ -1,5 +1,5 @@
 import { Autocomplete, TextField } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Title from '../components/Title'
 
 const playerSelection = () => {
@@ -9,10 +9,34 @@ const playerSelection = () => {
 
     const [choice, setChoice]: any = useState(null)
     const [link, setLink] = useState(null)
-
     const players = require('../assets/players_datbase.json')
+
+    const [comingSoon, setCommingSoon] = useState("Coming Soon")
+
+    useEffect(() => {
+            setTimeout(() => {
+                if(comingSoon.length < 14){
+                    setCommingSoon(comingSoon + ".")
+                }
+                else{
+                    setCommingSoon("Coming Soon")
+                }
+            }, 750)
+    })
     return (
-        <div className=''>
+        <div>
+            <Title />
+            <div className='flex h-screen items-center justify-center'>
+            <div className='font-bold text-2xl'>{comingSoon}</div>
+            </div>
+            
+        </div>
+    )
+}
+
+export default playerSelection
+
+{/* <div className=''>
             <Title />
             <div className='flex flex-col items-center h-screen justify-center'>
                 <Autocomplete
@@ -41,12 +65,4 @@ const playerSelection = () => {
                 }}>Copy Link To Clipboard</button>
                 {(link !== null)?<div>{link}</div>:null}
             </div>
-
-
-
-
-        </div>
-    )
-}
-
-export default playerSelection
+        </div> */}
