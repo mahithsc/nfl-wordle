@@ -12,11 +12,13 @@ import Title from '../components/Title';
 
 const Home: NextPage = () => {
   return (
-    <div className='flex flex-col h-screen w-screen bg-slate-600 items-center justify-center'>
-      <div className='text-white font-bold'>Waddle</div>
-      <a href="/unlimited">something</a>
+    <div className='flex flex-col h-screen w-screen bg-slate-600'>
+      <Title/>
+      <div className='flex flex-col h-screen items-center justify-center'>
+        <a href="/unlimited" className='text-white hover:underline'>Unlimited ∞</a>
+      </div>
     </div>
-  )  
+  )
 }
 
 export default Home
