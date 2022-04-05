@@ -12,7 +12,7 @@ import Title from '../components/Title';
 import Footer from '../components/Footer';
 import HeaderForPlayerBox from '../components/HeaderForPlayerBox';
 
-const unlimited = () => {
+const Unlimited = () => {
   //importing all the players from the JSON file
   const players = require('../assets/players_datbase.json')
 
@@ -152,4 +152,4 @@ const unlimited = () => {
   )
 }
 
-export default unlimited
+export default Unlimited

@@ -89,4 +89,4 @@ const PlayingWithFriends:NextPage = () => {
     )
 }
 
-export default playWithFriends
+export default PlayingWithFriends

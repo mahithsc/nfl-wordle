@@ -2,7 +2,7 @@ import { Autocomplete, TextField } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import Title from '../components/Title'
 
-const playerSelection = () => {
+const PlayerSelection = () => {
 
     const Cryptr = require('cryptr');
     const cryptr = new Cryptr('myTotalySecretKey');
