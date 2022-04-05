@@ -146,8 +146,6 @@ const Unlimited = () => {
         
 
       </div>
-
-      <Footer/>
     </div>
   )
 }
