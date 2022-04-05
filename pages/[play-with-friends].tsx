@@ -61,13 +61,31 @@ const playWithFriends = () => {
         setCorrect(true)
     }
 
+    const [comingSoon, setCommingSoon] = useState("Coming Soon")
+
     //changing the number of picks made
     useEffect(() => {
         setNumberOfPicks(picks => picks + 1)
     }, [choice, choiceTwo, choiceThree, choiceFour, choiceFive, choiceSix, choiceSeven, choiceEight])
 
+    useEffect(() => {
+        setTimeout(() => {
+            if (comingSoon.length < 14) {
+                setCommingSoon(comingSoon + ".")
+            }
+            else {
+                setCommingSoon("Coming Soon")
+            }
+        }, 750)
+    })
     return (
-        <div>Coming soon...</div>
+        <div>
+            <Title />
+            <div className='flex h-screen items-center justify-center'>
+                <div className='font-bold text-2xl'>{comingSoon}</div>
+            </div>
+
+        </div>
     )
 }
 
