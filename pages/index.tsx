@@ -9,14 +9,15 @@ import { ClassNames } from '@emotion/react';
 import { positions } from '@mui/system';
 import PlayerBox from '../components/PlayerBox';
 import Title from '../components/Title';
+import Link from 'next/link';
 
 const Home: NextPage = () => {
   return (
     <div className='flex flex-col h-screen w-screen bg-slate-600'>
       <Title/>
       <div className='flex flex-col h-screen items-center justify-center'>
-        <a href="/unlimited" className='text-white hover:underline'>Unlimited ∞</a>
-        <a href="/player-selection" className='text-white hover:underline'>Play With Friends</a>
+        <Link href="/unlimited" ><div className='text-white hover:underline'>Unlimited</div></Link>
+        <Link href="/player-selection"><div className='text-white hover:underline'>Play With Friends</div></Link>
       </div>
     </div>
   )
