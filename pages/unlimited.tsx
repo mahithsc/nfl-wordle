@@ -9,6 +9,7 @@ import { ClassNames } from '@emotion/react';
 import { positions } from '@mui/system';
 import PlayerBox from '../components/PlayerBox';
 import Title from '../components/Title';
+import Footer from '../components/Footer';
 
 const unlimited = () => {
   //importing all the players from the JSON file
@@ -76,6 +77,10 @@ const unlimited = () => {
     setPlayerOfTheDay(players[val])
   }
 
+  useEffect(() => {
+    generateNewPlayer()
+  }, [])
+
   //changing the number of picks made
   useEffect(() => {
     setNumberOfPicks(picks => picks + 1)
@@ -114,6 +119,15 @@ const unlimited = () => {
       </div>
 
       <div className='flex flex-1 flex-col'>
+      {correct ? <div className='items-center flex flex-col relative'>
+          <img src={playerOfTheDay.photo} className={`${correct ? 'brightness-1' : 'brightness-0'}`} width={500} />
+          <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
+        </div> : null}
+
+        {correct?(<button className='' onClick={() => generateNewPlayer()}>
+          generate new player
+        </button>):null
+        }
         <div className='flex flex-col mt-10 flex-1 items-center'>
           <div>
             {(choice === null) ? null : (<PlayerBox player={choice} playerOfTheDay={playerOfTheDay} changeStateTrue={changeCorrectTrue} />)}
@@ -127,22 +141,11 @@ const unlimited = () => {
           </div>
         </div>
 
-        {correct ? <div className='items-center flex flex-col relative'>
-          <img src={playerOfTheDay.photo} className={`${correct ? 'brightness-1' : 'brightness-0'}`} width={500} />
-          <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
-        </div> : null}
-
-        {correct?(<button className='' onClick={() => generateNewPlayer()}>
-          generate new player
-        </button>):null
-        }
+        
 
       </div>
 
-
-
-
-
+      <Footer/>
     </div>
   )
 }

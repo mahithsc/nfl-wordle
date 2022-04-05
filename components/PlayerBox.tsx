@@ -35,7 +35,7 @@ const PlayerBox: React.FC<Props> = ({ player, playerOfTheDay, changeStateTrue })
       {/* <div>{player?.name}</div> */}
       <div className={`${(player.playerPosition === playerOfTheDay.playerPosition) ? 'bg-green-600' : null} flex justify-center py-10`}>{player.playerPosition}</div>
       <div className={`${(player.team === playerOfTheDay.team) ? 'bg-green-600' : null} flex justify-center py-10`}>{player.team}</div>
-      <div className={`${(player.age === playerOfTheDay.age) ? 'bg-green-600' : null} flex justify-center py-10`}>{player.age}</div>
+      <div className={`${(player.age === playerOfTheDay.age) ? 'bg-green-600' : null} flex justify-center py-10`}>{(player.age).substring((player.age).indexOf('(')+1, (player.age).indexOf(')') )}</div>
       <div className={`${something()} flex justify-center py-10`}>{`${teams[player.team].confrence} ${teams[player.team].division}`}</div>
       {/* <div className={`${(player.age === playerOfTheDay.age) ? 'bg-green-600' : null} flex justify-center py-10`}>{teams[`${player.team}}`].division}</div> */}
     </div>
