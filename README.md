@@ -1,5 +1,5 @@
 # Waddle Game
 
-visit the game at: waddle.fun
+visit my game at: waddle.fun
 
 inspired by: weddlegame.com
