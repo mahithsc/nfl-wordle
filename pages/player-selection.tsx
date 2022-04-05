@@ -5,6 +5,7 @@ import Title from '../components/Title'
 const playerSelection = () => {
 
     const Cryptr = require('cryptr');
+    const cryptr = new Cryptr('myTotalySecretKey');
 
     const [choice, setChoice]: any = useState(null)
     const [link, setLink] = useState(null)
@@ -36,9 +37,8 @@ const playerSelection = () => {
                     <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
                 </div>
                 <button className='border-2 border-slate-900 hover:bg-slate-900 hover:text-white' onClick={() => {
-                    const cryptr = new Cryptr('myTotalySecretKey');
                     navigator.clipboard.writeText(`https://www.nfl.com/${cryptr.encrypt(choice.name)}`)
-                }}>Generate Url</button>
+                }}>Copy Link To Clipboard</button>
                 {(link !== null)?<div>{link}</div>:null}
             </div>
 
