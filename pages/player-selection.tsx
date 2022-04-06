@@ -5,14 +5,25 @@ import Title from '../components/Title'
 const PlayerSelection = () => {
     const players = require('../assets/players_datbase.json')
 
+    const arr = ['cGNQ2MUm4S', 'f0hClsDTw2', 'aeOR9qGHb2', 'b3k5PX4SDG', 'JPsyr3bEtf', 'jLq3y9hkTX', 'CmgtRmnLfw', 'NndhCHLX0C', 'W7wF4cjgpy', 'azPv3L8f4q']
+
     const index = players.findIndex((player: any) => {
         return player.name === 'Jaylen Waddle';
     });
+
     const [choice, setChoice]: any = useState(players[index])
 ;
 
     const encrypt = (value: string) => {
-        console.log("hello world")
+        const random = Math.floor(Math.random() * arr.length);
+        const index = players.findIndex((player: any) => {
+            return player.name === choice.name;
+        });
+        const string = index + arr[random]
+        console.log(string)
+        //copy to clipboard
+        navigator.clipboard.writeText(`https://www.waddlegame.org/${string}`);
+        // console.log(`copied ${copy}`)
     }
 
     return (
