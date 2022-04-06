@@ -13,7 +13,8 @@ const PlayerBox = ({ player, playerOfTheDay, changeStateTrue }) => {
 
   const [age, playerAge] = useState((player.age).substring((player.age).indexOf('(')+1, (player.age).indexOf(')')));
 
-  const something = () => {
+  //this function toggeles between green, yellow, and nothing for when the player of the day team matches the player team
+  const changingColorForTeamCOrrect = () => {
     if ((teams[player.team].confrence === teams[playerOfTheDay.team].confrence) && (teams[player.team].division === teams[playerOfTheDay.team].division)) {
       return 'bg-green-600'
     }//else if statement
@@ -38,7 +39,7 @@ const PlayerBox = ({ player, playerOfTheDay, changeStateTrue }) => {
       <div className={`${(player.playerPosition === playerOfTheDay.playerPosition) ? 'bg-green-600' : null} flex justify-center py-10`}>{player.playerPosition}</div>
       <div className={`${(player.team === playerOfTheDay.team) ? 'bg-green-600' : null} flex justify-center py-10`}>{player.team}</div>
       <div className={`${(player.age === playerOfTheDay.age) ? 'bg-green-600' : null} flex justify-center py-10`}>{age}</div>
-      <div className={`${something()} flex justify-center py-10`}>{`${teams[player.team].confrence} ${teams[player.team].division}`}</div>
+      <div className={`${changingColorForTeamCOrrect()} flex justify-center py-10`}>{`${teams[player.team].confrence} ${teams[player.team].division}`}</div>
       {/* <div className={`${(player.age === playerOfTheDay.age) ? 'bg-green-600' : null} flex justify-center py-10`}>{teams[`${player.team}}`].division}</div> */}
     </div>
   );
