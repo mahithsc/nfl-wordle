@@ -1,34 +1,45 @@
+import { Autocomplete, TextField } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import Title from '../components/Title'
 
 const PlayerSelection = () => {
-
-    const Cryptr = require('cryptr');
-    const cryptr = new Cryptr('myTotalySecretKey');
-
-    const [choice, setChoice]: any = useState(null)
-    const [link, setLink] = useState(null)
     const players = require('../assets/players_datbase.json')
 
-    const [comingSoon, setCommingSoon] = useState("Coming Soon")
+    const index = players.findIndex((player:any) => {
+        return player.name === 'Jaylen Waddle';
+      });
 
-    useEffect(() => {
-            setTimeout(() => {
-                if(comingSoon.length < 14){
-                    setCommingSoon(comingSoon + ".")
-                }
-                else{
-                    setCommingSoon("Coming Soon")
-                }
-            }, 750)
-    })
+    const [choice, setChoice]: any = useState(players[index])
+
+    
+
     return (
         <div>
             <Title />
-            <div className='flex h-screen items-center justify-center'>
-            <div className='font-bold text-2xl'>{comingSoon}</div>
+            <div className='mt-10'>
+                <div className='text-xl text-center font-bold'>create a Waddle game by picking a player!</div>
+                <div className='text-center'>pick a player from the searchbar, ten generate a link and share!</div>
             </div>
-            
+            <div className='flex flex-col items-center mt-11'>
+                <Autocomplete
+                    className='sm:w-[35rem] w-screen mx-1'
+                    disablePortal
+                    id="free-solo-demo"
+                    options={players}
+                    getOptionLabel={(option: any) => option?.name}
+                    //when an option is selected, set the state of the choice
+                    onChange={(event: any, newValue: string | null) => { setChoice(newValue) }}
+                    renderInput={(params) => <TextField {...params} />}
+                />
+            </div>
+            {choice !== null ? (<div className='items-center flex flex-col relative'>
+                <img src={choice.photo} width={500} />
+                <div className='font-bold text-2xl'>{choice.name}</div>
+                <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
+            </div>) : null}
+            <button className=''>
+                <div>copy link</div>
+            </button>
         </div>
     )
 }
