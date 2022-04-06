@@ -120,14 +120,17 @@ const Unlimited = () => {
       </div>
 
       <div className='flex flex-1 flex-col'>
-      {correct ? <div className='items-center flex flex-col relative'>
+      {correct ? (<div className='items-center flex flex-col relative'>
           <img src={playerOfTheDay.photo} className={`${correct ? 'brightness-1' : 'brightness-0'}`} width={500} />
+          <div className='font-bold text-2xl'>{playerOfTheDay.name}</div>
           <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
-        </div> : null}
+        </div>) : null}
 
-        {correct?(<button className='' onClick={() => generateNewPlayer()}>
+        {correct?(<div className='flex justify-center mt-8'>
+          <button className='text-white bg-slate-900 px-5 py-2 rounded-xl' onClick={() => generateNewPlayer()}>
           generate new player
-        </button>):null
+        </button>
+          </div>):null
         }
         <div className='flex flex-col mt-10 flex-1 items-center'>
           <div>
