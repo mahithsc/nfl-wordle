@@ -88,11 +88,8 @@ const Unlimited = () => {
 
   return (
     <div>
-
       <Title />
-
       <div className='flex flex-col items-center mt-11'>
-
         <Autocomplete
           disabled={correct}
           className='sm:w-[35rem] w-screen mx-1'
@@ -100,25 +97,20 @@ const Unlimited = () => {
           id="free-solo-demo"
           options={players}
           getOptionLabel={(option: any) => option?.name}
-
           //when an option is selected, set the state of the choice
           onChange={(event: any, newValue: string | null) => {
             changeStateFunc(numberOfPicks, newValue)
           }}
-
           renderInput={(params) => <TextField {...params} />
           }
         />
-
       </div>
-
       <div className='flex flex-1 flex-col'>
       {correct ? (<div className='items-center flex flex-col relative'>
           <img src={playerOfTheDay.photo} className={`${correct ? 'brightness-1' : 'brightness-0'}`} width={500} />
           <div className='font-bold text-2xl'>{playerOfTheDay.name}</div>
           <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
         </div>) : null}
-
         {correct?(<div className='flex justify-center mt-8'>
           <button className='text-white bg-slate-900 px-5 py-2 rounded-xl' onClick={() => generateNewPlayer()}>
           generate new player
@@ -138,9 +130,6 @@ const Unlimited = () => {
             {(choiceEight === null) ? null : (<PlayerBox player={choiceEight} playerOfTheDay={playerOfTheDay} changeStateTrue={changeCorrectTrue} />)}
           </div>
         </div>
-
-        
-
       </div>
     </div>
   )
