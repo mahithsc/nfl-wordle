@@ -59,16 +59,3 @@ const PlayerBox = ({ player, playerOfTheDay, changeStateTrue }) => {
 }
 
 export default PlayerBox
-
-
-// ${ ? 'bg-green-600' : null}
-//       ${(teams[player.team].confrence) === (teams[playerOfTheDay.team].confrence)?'bg-yellow-500':null}
-
-
-// ${() => {
-//   if(age>playerOfTheDayAge) {
-//     return (<AiOutlineArrowUp/>)
-//   }else if(age<playerOfTheDayAge) {
-//     return (<AiOutlineArrowDown/>)
-//   }
-// }}
