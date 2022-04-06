@@ -1,13 +1,5 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import React, { useState, useEffect } from 'react';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import { ClassNames } from '@emotion/react';
-import { positions } from '@mui/system';
-import PlayerBox from '../components/PlayerBox';
 import Title from '../components/Title';
 import Link from 'next/link';
 
