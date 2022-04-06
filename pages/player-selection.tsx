@@ -5,20 +5,20 @@ import Title from '../components/Title'
 const PlayerSelection = () => {
     const players = require('../assets/players_datbase.json')
 
-    const index = players.findIndex((player:any) => {
+    const index = players.findIndex((player: any) => {
         return player.name === 'Jaylen Waddle';
-      });
+    });
 
     const [choice, setChoice]: any = useState(players[index])
 
-    
+
 
     return (
         <div>
             <Title />
             <div className='mt-10'>
                 <div className='text-xl text-center font-bold'>create a Waddle game by picking a player!</div>
-                <div className='text-center'>pick a player from the searchbar, ten generate a link and share!</div>
+                <div className='text-center flex-wrap'>pick a player from the searchbar, then hit the copy link button at the bottom and share!</div>
             </div>
             <div className='flex flex-col items-center mt-11'>
                 <Autocomplete
@@ -37,9 +37,13 @@ const PlayerSelection = () => {
                 <div className='font-bold text-2xl'>{choice.name}</div>
                 <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
             </div>) : null}
-            <button className=''>
-                <div>copy link</div>
-            </button>
+
+            {choice !== null ? (<div className='flex justify-center mt-8'>
+          <button className='text-white bg-slate-900 px-5 py-2 rounded-xl mb-10'>
+              copy link
+        </button>
+          </div>) : null}
+
         </div>
     )
 }
