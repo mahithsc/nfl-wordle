@@ -10,14 +10,9 @@ const PlayerSelection = () => {
     });
 
     const [choice, setChoice]: any = useState(players[index])
-
-    // var ncrypt = require("ncrypt-js");
+;
 
     const encrypt = (value: string) => {
-        // var encryptedData = ncrypt.encrypt(value);
-        // console.log(encryptedData);
-        // var decryptedData = ncrypt.decrypt(encryptedData);
-        // console.log(decryptedData);
         console.log("hello world")
     }
 
