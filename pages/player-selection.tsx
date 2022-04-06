@@ -11,6 +11,7 @@ const PlayerSelection = () => {
 
     const [choice, setChoice]: any = useState(players[index])
 
+    
 
 
     return (
@@ -39,11 +40,10 @@ const PlayerSelection = () => {
             </div>) : null}
 
             {choice !== null ? (<div className='flex justify-center mt-8'>
-          <button className='text-white bg-slate-900 px-5 py-2 rounded-xl mb-10'>
-              copy link
-        </button>
-          </div>) : null}
-
+                <button className='text-white bg-slate-900 px-5 py-2 rounded-xl mb-10'>
+                    copy link
+                </button>
+            </div>) : null}
         </div>
     )
 }
