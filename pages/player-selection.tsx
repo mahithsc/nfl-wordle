@@ -8,7 +8,6 @@ const PlayerSelection = () => {
     const index = players.findIndex((player: any) => {
         return player.name === 'Jaylen Waddle';
     });
-
     const [choice, setChoice]: any = useState(players[index])
 ;
 
