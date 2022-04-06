@@ -11,8 +11,15 @@ const PlayerSelection = () => {
 
     const [choice, setChoice]: any = useState(players[index])
 
-    
+    // var ncrypt = require("ncrypt-js");
 
+    const encrypt = (value: string) => {
+        // var encryptedData = ncrypt.encrypt(value);
+        // console.log(encryptedData);
+        // var decryptedData = ncrypt.decrypt(encryptedData);
+        // console.log(decryptedData);
+        console.log("hello world")
+    }
 
     return (
         <div>
@@ -40,7 +47,7 @@ const PlayerSelection = () => {
             </div>) : null}
 
             {choice !== null ? (<div className='flex justify-center mt-8'>
-                <button className='text-white bg-slate-900 px-5 py-2 rounded-xl mb-10'>
+                <button className='text-white bg-slate-900 px-5 py-2 rounded-xl mb-10' onClick={() => encrypt(choice.name)}>
                     copy link
                 </button>
             </div>) : null}
