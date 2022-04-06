@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 
 // interface Props {
 //   player: object
@@ -11,22 +12,30 @@ import React, { useEffect, useState } from 'react'
 const PlayerBox = ({ player, playerOfTheDay, changeStateTrue }) => {
   const teams = require('../assets/nfl_teams.json');
 
-  const [age, playerAge] = useState((player.age).substring((player.age).indexOf('(')+1, (player.age).indexOf(')')));
+  const [age, setAge] = useState((player.age).substring((player.age).indexOf('(') + 1, (player.age).indexOf(')')));
+  const [playerOfTheDayAge, setPlayerOfTheDayAge] = useState((playerOfTheDay.age).substring((playerOfTheDay.age).indexOf('(') + 1, (playerOfTheDay.age).indexOf(')')));
 
   //this function toggeles between green, yellow, and nothing for when the player of the day team matches the player team
   const changingColorForTeamCOrrect = () => {
     if ((teams[player.team].confrence === teams[playerOfTheDay.team].confrence) && (teams[player.team].division === teams[playerOfTheDay.team].division)) {
       return 'bg-green-600'
-    }//else if statement
-    else if (teams[player.team].confrence === teams[playerOfTheDay.team].confrence) {
+    } else if (teams[player.team].confrence === teams[playerOfTheDay.team].confrence) {
       return 'bg-yellow-500'
     } else {
       return null
     }
   }
 
+  const decidingArrowForAge = () => {
+    if (age > playerOfTheDayAge) {
+      return <AiOutlineArrowDown/>
+    } else if (age < playerOfTheDayAge) {
+      return <AiOutlineArrowUp/>
+    } 
+  }
+
   useEffect(() => {
-    if((player.name === playerOfTheDay.name) && (player.playerPosition === playerOfTheDay.playerPosition) && (player.team === playerOfTheDay.team)) {
+    if ((player.name === playerOfTheDay.name) && (player.playerPosition === playerOfTheDay.playerPosition) && (player.team === playerOfTheDay.team)) {
       changeStateTrue();
     }
   }, [])
@@ -38,7 +47,11 @@ const PlayerBox = ({ player, playerOfTheDay, changeStateTrue }) => {
       {/* <div>{player?.name}</div> */}
       <div className={`${(player.playerPosition === playerOfTheDay.playerPosition) ? 'bg-green-600' : null} flex justify-center py-10`}>{player.playerPosition}</div>
       <div className={`${(player.team === playerOfTheDay.team) ? 'bg-green-600' : null} flex justify-center py-10`}>{player.team}</div>
-      <div className={`${(player.age === playerOfTheDay.age) ? 'bg-green-600' : null} flex justify-center py-10`}>{age}</div>
+      <div className={`${(age === playerOfTheDayAge) ? 'bg-green-600' : null} flex justify-center py-10`}>{`${age}`}
+        <div className='flex self-center'>
+          {decidingArrowForAge()}
+        </div>
+      </div>
       <div className={`${changingColorForTeamCOrrect()} flex justify-center py-10`}>{`${teams[player.team].confrence} ${teams[player.team].division}`}</div>
       {/* <div className={`${(player.age === playerOfTheDay.age) ? 'bg-green-600' : null} flex justify-center py-10`}>{teams[`${player.team}}`].division}</div> */}
     </div>
@@ -50,3 +63,12 @@ export default PlayerBox
 
 // ${ ? 'bg-green-600' : null}
 //       ${(teams[player.team].confrence) === (teams[playerOfTheDay.team].confrence)?'bg-yellow-500':null}
+
+
+// ${() => {
+//   if(age>playerOfTheDayAge) {
+//     return (<AiOutlineArrowUp/>)
+//   }else if(age<playerOfTheDayAge) {
+//     return (<AiOutlineArrowDown/>)
+//   }
+// }}
