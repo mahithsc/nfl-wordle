@@ -89,6 +89,9 @@ const Unlimited = () => {
   return (
     <div>
       <Title />
+      <div className='flex items-center justify-center'>
+        <div>NFL Player Guessing Game</div>
+      </div>
       <div className='flex flex-col items-center mt-11'>
         <Autocomplete
           disabled={correct}
