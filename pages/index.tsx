@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     <div className='flex flex-col h-screen w-screen bg-black'>
       <Title/>
       <div className='flex flex-col h-screen items-center justify-center space-y-10'>
-        <div className='text-white underline text-3xl'>Weddle</div>
+        <div className='text-white text-3xl'>Weddle</div>
       </div>
 
       <div className='self-center mb-20'>
