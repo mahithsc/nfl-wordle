@@ -89,6 +89,10 @@ const Unlimited = () => {
   return (
     <div>
       <Title />
+      <div className='mt-10'>
+                <div className='text-xl text-center font-bold'>this is Waddle unlimited!</div>
+                <div className='text-center flex-wrap'>you can keep generating new players, and you have 7 tries to guesse each player. let's see if you can get it!</div>
+            </div>
       <div className='flex flex-col items-center mt-11'>
         <Autocomplete
           disabled={correct}

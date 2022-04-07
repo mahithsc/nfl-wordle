@@ -1,8 +1,14 @@
 import type { NextPage } from 'next'
 import React, { useState, useEffect } from 'react';
 import Title from '../components/Title';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+import PlayerBox from '../components/PlayerBox';
+import HeaderForPlayerBox from '../components/HeaderForPlayerBox';
+import { useRouter } from 'next/router';
 
-const PlayingWithFriends:NextPage = () => {
+const PlayingWithFriends: NextPage = () => {
+    //importing all the players from the JSON file
     const players = require('../assets/players_datbase.json')
 
     //state variables for the players
@@ -17,9 +23,6 @@ const PlayingWithFriends:NextPage = () => {
 
     //state varibale for the player of the day
     const [playerOfTheDay, setPlayerOfTheDay] = useState(players[0]);
-
-    //state for the sillhoute
-    const [sillhoute, setSillhoute] = useState(false);
 
     //keps track of the number of picks the user has made
     const [numberOfPicks, setNumberOfPicks] = useState(0)
@@ -48,12 +51,16 @@ const PlayingWithFriends:NextPage = () => {
         }
     }
 
-    //this is used in the player box file to change the correctness of the guesse state
+    //used int he playerbox component to change the correctness of the answer
     const changeCorrectTrue = () => {
         setCorrect(true)
     }
 
-    const [comingSoon, setCommingSoon] = useState("Coming Soon")
+    useEffect(() => {
+        //get current path name
+        const currentURL = window.location.pathname
+        setPlayerOfTheDay(players[currentURL.substring(11)])
+    }, [])
 
     //changing the number of picks made
     useEffect(() => {
@@ -61,22 +68,54 @@ const PlayingWithFriends:NextPage = () => {
     }, [choice, choiceTwo, choiceThree, choiceFour, choiceFive, choiceSix, choiceSeven, choiceEight])
 
     useEffect(() => {
-        setTimeout(() => {
-            if (comingSoon.length < 14) {
-                setCommingSoon(comingSoon + ".")
-            }
-            else {
-                setCommingSoon("Coming Soon")
-            }
-        }, 750)
+        if (numberOfPicks === 8) {
+            setCorrect(true)
+        }
     })
+
     return (
         <div>
             <Title />
-            <div className='flex h-screen items-center justify-center'>
-                <div className='font-bold text-2xl'>{comingSoon}</div>
+            <div className='mt-10'>
+                <div className='text-xl text-center font-bold'>lets see if you can guesse the player!</div>
+                <div className='text-center flex-wrap'>your friend shared you this link with a player in mind. lets see if you can get it in 7 tries!</div>
             </div>
-
+            <div className='flex flex-col items-center mt-11'>
+                <Autocomplete
+                    disabled={correct}
+                    className='sm:w-[35rem] w-screen mx-1'
+                    disablePortal
+                    id="free-solo-demo"
+                    options={players}
+                    getOptionLabel={(option: any) => option?.name}
+                    //when an option is selected, set the state of the choice
+                    onChange={(event: any, newValue: string | null) => {
+                        changeStateFunc(numberOfPicks, newValue)
+                    }}
+                    renderInput={(params) => <TextField {...params} />
+                    }
+                />
+            </div>
+            <div className='flex flex-1 flex-col'>
+                {correct ? (<div className='items-center flex flex-col relative'>
+                    <img src={playerOfTheDay.photo} className={`${correct ? 'brightness-1' : 'brightness-0'}`} width={500} />
+                    <div className='font-bold text-2xl'>{playerOfTheDay.name}</div>
+                    <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
+                </div>) : null}
+                <div className='flex flex-col mt-10 flex-1 items-center'>
+                    <div>
+                        {(choice === null) ? null : <HeaderForPlayerBox />}
+                        {(choice === null) ? null : (<PlayerBox player={choice} playerOfTheDay={playerOfTheDay} changeStateTrue={changeCorrectTrue} />)}
+                        {(choiceTwo === null) ? null : (<PlayerBox player={choiceTwo} playerOfTheDay={playerOfTheDay} changeStateTrue={changeCorrectTrue} />)}
+                        {(choiceThree === null) ? null : (<PlayerBox player={choiceThree} playerOfTheDay={playerOfTheDay} changeStateTrue={changeCorrectTrue} />)}
+                        {(choiceFour === null) ? null : (<PlayerBox player={choiceFour} playerOfTheDay={playerOfTheDay} changeStateTrue={changeCorrectTrue} />)}
+                        {(choiceFive === null) ? null : (<PlayerBox player={choiceFive} playerOfTheDay={playerOfTheDay} changeStateTrue={changeCorrectTrue} />)}
+                        {(choiceSix === null) ? null : (<PlayerBox player={choiceSix} playerOfTheDay={playerOfTheDay} changeStateTrue={changeCorrectTrue} />)}
+                        {(choiceSeven === null) ? null : (<PlayerBox player={choiceSeven} playerOfTheDay={playerOfTheDay} changeStateTrue={changeCorrectTrue} />)}
+                        {(choiceEight === null) ? null : (<PlayerBox player={choiceEight} playerOfTheDay={playerOfTheDay} changeStateTrue={changeCorrectTrue} />)}
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
