@@ -27,14 +27,21 @@ const PlayerSelection = () => {
     }
 
     return (
-        <div>
-            <Title />
-            <div className='mt-10'>
-                <div className='text-xl text-center font-bold'>create a Waddle game by picking a player!</div>
-                <div className='text-center flex-wrap'>pick a player from the searchbar, then hit the copy link button at the bottom and share!</div>
-            </div>
+        <div className='min-h-screen bg-[rgb(25,25,25)]'>
+            <Title/>
+            <div className='h-16'></div>
+      <div>
+        <div className='text-center text-white text-5xl'>waddle <div className='text-xl mt-2'>vs. friends</div></div>
+        {/* <div className='text-center flex-wrap text-white'>you can keep generating new players, and you have 7 tries to guesse each player. let&apos;s see if you can get it!</div> */}
+      </div>
             <div className='flex flex-col items-center mt-11'>
                 <Autocomplete
+                style={{
+                    borderColor: '#ffffff',
+                    borderWidth: '1px',
+                    borderRadius: '5px',
+                    backgroundColor: 'white'
+                  }}
                     className='sm:w-[35rem] w-screen mx-1'
                     disablePortal
                     id="free-solo-demo"
@@ -49,12 +56,12 @@ const PlayerSelection = () => {
             </div>
             {choice !== null ? (<div className='items-center flex flex-col relative'>
                 <img src={choice.photo} width={500} />
-                <div className='font-bold text-2xl'>{choice.name}</div>
+                <div className='font-bold text-2xl text-white'>{choice.name}</div>
                 <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
             </div>) : null}
 
             {choice !== null ? (<div className='flex justify-center mt-8'>
-                <button className={`${!selected?'bg-slate-900': 'bg-green-500'} text-white  px-5 py-2 rounded-xl mb-10 md:w-[35rem] md:h-14 w-screen mx-16 h-14`} onClick={() => {
+                <button className={`${!selected?'bg-black': 'bg-green-500'} text-white  px-5 py-2 rounded-xl mb-10 md:w-[35rem] md:h-14 w-screen mx-16 h-14`} onClick={() => {
                     encrypt(choice.name)
                 }}>
                     {!selected?(<div>copy link</div>):<div>copied!</div>}
