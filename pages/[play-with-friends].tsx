@@ -75,17 +75,20 @@ const PlayingWithFriends: NextPage = () => {
 
     return (
         <div className='min-h-screen bg-[rgb(25,25,25)]'>
+            <Title/>
+            <div className='h-16'></div>
+            <div></div>
             <div>
-            <div className='text-center text-white text-5xl'>waddle <div className='text-xl mt-2'>guese friend player</div></div>
+                <div className='text-center text-white text-5xl'>waddle <div className='text-xl mt-2'>guessing vs. friend</div></div>
             </div>
             <div className='flex flex-col items-center mt-11'>
                 <Autocomplete
-                style={{
-                    borderColor: '#ffffff',
-                    borderWidth: '1px',
-                    borderRadius: '5px',
-                    backgroundColor: 'white'
-                  }}
+                    style={{
+                        borderColor: '#ffffff',
+                        borderWidth: '1px',
+                        borderRadius: '5px',
+                        backgroundColor: 'white'
+                    }}
                     disabled={correct}
                     className='sm:w-[35rem] w-screen mx-1'
                     disablePortal

@@ -28,6 +28,7 @@ const PlayerSelection = () => {
 
     return (
         <div className='min-h-screen bg-[rgb(25,25,25)]'>
+            <Title/>
             <div className='h-16'></div>
       <div>
         <div className='text-center text-white text-5xl'>waddle <div className='text-xl mt-2'>vs. friends</div></div>
