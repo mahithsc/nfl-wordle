@@ -12,7 +12,7 @@ const Home: NextPage = () => {
         <Link href="/player-selection"><div className='text-white hover:underline text-2xl'>Play With Friends</div></Link>
       </div>
 
-      <div className='self-center'>
+      <div className='self-center mb-20'>
         <div className='text-white'>by: <Link href={'https://github.com'}><a className='underline'>Mahith Chitrapu</a></Link></div>
         <div className='text-white'>Inspired by <Link href={'https://weddlegame.com'}><a className='underline'>Weddle</a></Link></div>
       </div>
