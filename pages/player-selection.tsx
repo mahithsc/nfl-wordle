@@ -19,7 +19,7 @@ const PlayerSelection = () => {
         const index = players.findIndex((player: any) => {
             return player.name === choice.name;
         });
-        const string = index + arr[random]
+        const string = arr[random] + index;
         console.log(string)
         //copy to clipboard
         navigator.clipboard.writeText(`https://www.waddlegame.org/${string}`);
