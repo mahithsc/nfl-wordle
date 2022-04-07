@@ -62,7 +62,6 @@ export default function Title() {
   };
   
   useEffect(() => {
-    //routing to a page
     router.push(`/${routes[value]}`);
   }, [value])
 
