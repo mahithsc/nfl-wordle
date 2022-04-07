@@ -51,6 +51,9 @@ const StyledTab = styled((props: StyledTabProps) => (
 
 export default function Title() {
 
+  //getting the path of the link
+  
+
   const router = useRouter();
 
   const routes = ['unlimited', 'player-selection']
@@ -62,7 +65,10 @@ export default function Title() {
   };
   
   useEffect(() => {
-    router.push(`/${routes[value]}`);
+    const currentURL = window.location.pathname
+    if (currentURL.includes('unlimited') || currentURL.includes('player-selection')) {
+      router.push(`/${routes[value]}`);
+    }
   }, [value])
 
   return (

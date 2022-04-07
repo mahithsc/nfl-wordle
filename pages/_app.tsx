@@ -4,7 +4,6 @@ import Title from '../components/Title'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-
     <div>
       <Title />
       <Component {...pageProps} />
