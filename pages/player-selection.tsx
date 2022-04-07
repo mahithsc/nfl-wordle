@@ -35,6 +35,12 @@ const PlayerSelection = () => {
       </div>
             <div className='flex flex-col items-center mt-11'>
                 <Autocomplete
+                style={{
+                    borderColor: '#ffffff',
+                    borderWidth: '1px',
+                    borderRadius: '5px',
+                    backgroundColor: 'white'
+                  }}
                     className='sm:w-[35rem] w-screen mx-1'
                     disablePortal
                     id="free-solo-demo"

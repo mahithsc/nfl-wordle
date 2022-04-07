@@ -4,6 +4,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import PlayerBox from '../components/PlayerBox';
 import Title from '../components/Title';
 import HeaderForPlayerBox from '../components/HeaderForPlayerBox';
+import { borderColor } from '@mui/system';
 
 const Unlimited = () => {
   //importing all the players from the JSON file
@@ -96,6 +97,12 @@ const Unlimited = () => {
 
       <div className='flex flex-col items-center mt-11'>
         <Autocomplete
+        style={{
+          borderColor: '#ffffff',
+          borderWidth: '1px',
+          borderRadius: '5px',
+          backgroundColor: 'white'
+        }}
           disabled={correct}
           className='sm:w-[35rem] w-screen mx-1'
           disablePortal
