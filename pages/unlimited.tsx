@@ -88,10 +88,13 @@ const Unlimited = () => {
 
   return (
     <div className='min-h-screen bg-[rgb(25,25,25)]'>
-      <div className=''>
-        <div className='text-xl text-center font-bold text-white'>this is Waddle unlimited!</div>
-        <div className='text-center flex-wrap text-white'>you can keep generating new players, and you have 7 tries to guesse each player. let&apos;s see if you can get it!</div>
+      <div className='h-16'></div>
+
+      <div>
+        <div className='text-center text-white text-5xl'>waddle <div className='text-xl mt-2'>unlimited</div></div>
+        {/* <div className='text-center flex-wrap text-white'>you can keep generating new players, and you have 7 tries to guesse each player. let&apos;s see if you can get it!</div> */}
       </div>
+
       <div className='flex flex-col items-center mt-11'>
         <Autocomplete
           disabled={correct}
