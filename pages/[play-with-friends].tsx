@@ -56,7 +56,6 @@ const PlayingWithFriends: NextPage = () => {
         setCorrect(true)
     }
 
-    const router = useRouter()
     useEffect(() => {
         //get current path name
         const currentURL = window.location.pathname
