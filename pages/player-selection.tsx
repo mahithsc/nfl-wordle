@@ -28,7 +28,6 @@ const PlayerSelection = () => {
 
     return (
         <div>
-            <Title />
             <div className='mt-10'>
                 <div className='text-xl text-center font-bold'>create a Waddle game by picking a player!</div>
                 <div className='text-center flex-wrap'>pick a player from the searchbar, then hit the copy link button at the bottom and share!</div>

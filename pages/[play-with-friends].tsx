@@ -75,7 +75,6 @@ const PlayingWithFriends: NextPage = () => {
 
     return (
         <div>
-            <Title />
             <div className='mt-10'>
                 <div className='text-xl text-center font-bold'>lets see if you can guesse the player!</div>
                 <div className='text-center flex-wrap'>your friend shared you this link with a player in mind. lets see if you can get it in 7 tries!</div>
