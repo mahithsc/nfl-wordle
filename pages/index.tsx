@@ -6,9 +6,12 @@ import Link from 'next/link';
 const Home: NextPage = () => {
   return (
     <div className='flex flex-col h-screen w-screen bg-black'>
-      <Title/>
+      <Title />
       <div className='flex flex-col h-screen items-center justify-center space-y-10'>
-        <div className='text-white text-3xl'>Waddle</div>
+        <Link href={'/unlimited'}>
+          <a className='text-white text-3xl hover:underline'>Waddle</a>
+        </Link>
+
       </div>
 
       <div className='self-center mb-20'>
