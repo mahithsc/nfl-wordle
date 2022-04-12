@@ -106,7 +106,7 @@ const PlayingWithFriends: NextPage = () => {
             <div className='flex flex-1 flex-col'>
                 {correct ? (<div className='items-center flex flex-col relative'>
                     <img src={playerOfTheDay.photo} className={`${correct ? 'brightness-1' : 'brightness-0'}`} width={500} />
-                    <div className='font-bold text-2xl'>{playerOfTheDay.name}</div>
+                    <div className='font-bold text-2xl text-white'>{playerOfTheDay.name}</div>
                     <div className='absolute h-[100%] w-[100%] bg-white-500 bottom-0'></div>
                 </div>) : null}
                 <div className='flex flex-col mt-10 flex-1 items-center'>
