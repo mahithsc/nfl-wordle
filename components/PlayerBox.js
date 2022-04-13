@@ -42,9 +42,9 @@ const PlayerBox = ({ player, playerOfTheDay, changeStateTrue }) => {
 
   return (
     // <div>{player.name}</div>
-    <div className='border-t-4 border-[rgb(25,25,25)]'>
+    <div className='border-t-8 border-[rgb(25,25,25)]'>
       {/* <div></div> */}
-      <div className={`${(player.name === playerOfTheDay.name) ? 'bg-green-600' : null} flex bg-[rgb(25,25,25)] border-black  text-white justify-center font-bold`}>{player?.name}</div>
+      <div className={`${(player.name === playerOfTheDay.name) ? 'bg-green-600' : null} flex bg-black border-black  text-white justify-center font-bold`}>{player?.name}</div>
       <div className='grid grid-cols-5  bg-black w-screen lg:w-[50rem]'>
         {/* <div>{player?.name}</div> */}
         <div className={`${(player.playerPosition === playerOfTheDay.playerPosition) ? 'bg-green-600' : null} flex justify-center py-10 text-white`}>{player.playerPosition}</div>
