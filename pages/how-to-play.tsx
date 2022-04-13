@@ -45,7 +45,8 @@ const HowToPlay = () => {
             <div className='mt-5'>
               <li className='mb-2'>use the search bar to select the secret player you wish to share with your friend</li>
               <li className='mb-2'>once you have slected the player of your liking, click the copy link button</li>
-              <li>this button generates and copies to you device a unique link you can share with you friend</li>
+              <li className='mb-2'>this button generates and copies to you device a unique link you can share with you friend</li>
+              <li>share this link to you friend and have them guess who the player is!</li>
             </div>
           </div>
         </div>
