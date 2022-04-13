@@ -17,16 +17,26 @@ const HowToPlay = () => {
         <div className='text-white ml-10 mr-10'>
           <div className='bg-black p-5 rounded-xl'>
             <div className='font-bold text-2xl'>objective of the game</div>
-            <div className='mt-5'>the main idea of the game is to guesse the secret player in as little tries as possible. you have 7 tries to guesse each player. the game only includes first string offensive players. its that simple!</div>
+            <div className='mt-5'>you want to guess the secret player in as little number of guesses as possible. it's that simple!</div>
           </div>
+
+          {/* <div className='bg-black p-5 rounded-xl mt-5'>
+            <div className='font-bold text-2xl'>so how do I guess</div>
+            <div className='mt-5'>use the searchbar to find the player you are thinking about and select him. you will have 7 tried to guesse the secret player. </div>
+          </div> */}
 
           <div className='bg-black p-5 rounded-xl mt-5'>
-          <div className='font-bold text-2xl'>so how do I guess</div>
-          <div className='mt-5'>click the search bar looking field, and a dropdown should apear. type in the player you are thinking about, find him, and click the </div>
+            <div className='font-bold text-2xl'>rules for waddle unlimited</div>
+            <div className='mt-5'>
+              <li className='mb-2'>you have 7 guesses to get the right player</li>
+              <li className='mb-2'>use the search bar to find the player that you're thinking off</li>
+              <li className='mb-2'> <span className='bg-green-500 p-1 text-black'>green</span> column means that that metric is exactly correct</li>
+              <li> <span className='bg-yellow-500 p-1 text-black'>yellow</span> column means that that metric is off by one</li>
+            </div>
           </div>
 
 
-         
+
         </div>
 
 
