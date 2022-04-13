@@ -44,9 +44,10 @@ const PlayerBox = ({ player, playerOfTheDay, changeStateTrue }) => {
     // <div>{player.name}</div>
     <div className='border-t-8 border-[rgb(25,25,25)]'>
       {/* <div></div> */}
-      <div className={`${(player.name === playerOfTheDay.name) ? 'bg-green-600' : null} flex bg-black border-black  text-white justify-center font-bold`}>{player?.name}</div>
-      <div className='grid grid-cols-5  bg-black w-screen lg:w-[50rem]'>
+      <div className={`${(player.name === playerOfTheDay.name) ? 'bg-green-600' : null} flex border-black bg-black  text-white font-bold pt-2 pl-2 pb-2`}>{player?.name}</div>
+      <div className='grid grid-cols-5  bg-black w-screen lg:w-[50rem] border-t-[rgb(204, 204, 204)] border-t-2'>
         {/* <div>{player?.name}</div> */}
+        <div className={`${(player.playerPosition === playerOfTheDay.playerPosition) ? 'bg-green-600' : null} flex justify-center py-10 text-white`}>{player.playerPosition}</div>
         <div className={`${(player.playerPosition === playerOfTheDay.playerPosition) ? 'bg-green-600' : null} flex justify-center py-10 text-white`}>{player.playerPosition}</div>
         <div className={`${(player.team === playerOfTheDay.team) ? 'bg-green-600' : null} flex justify-center py-10 text-white`}>{player.team}</div>
         <div className={`${(age === playerOfTheDayAge) ? 'bg-green-600' : null} flex justify-center py-10 text-white`}>{`${age}`}
