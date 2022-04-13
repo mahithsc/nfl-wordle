@@ -17,12 +17,12 @@ const HowToPlay = () => {
         <div className='text-white ml-10 mr-10'>
           <div className='bg-black p-5 rounded-xl'>
             <div className='font-bold text-2xl'>objective of the game</div>
-            <div className='mt-5'>the main idea of the game is to guesse the secret player in as little tries as possible. you have 7 tries to guesse each player. its that simple!</div>
+            <div className='mt-5'>the main idea of the game is to guesse the secret player in as little tries as possible. you have 7 tries to guesse each player. the game only includes first string offensive players. its that simple!</div>
           </div>
 
           <div className='bg-black p-5 rounded-xl mt-5'>
           <div className='font-bold text-2xl'>so how do I guess</div>
-          <div className='mt-5'>the first time </div>
+          <div className='mt-5'>click the search bar looking field, and a dropdown should apear. type in the player you are thinking about, find him, and click the </div>
           </div>
 
 
