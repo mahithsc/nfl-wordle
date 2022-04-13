@@ -28,10 +28,10 @@ const PlayerBox = ({ player, playerOfTheDay, changeStateTrue }) => {
 
   const decidingArrowForAge = () => {
     if (age > playerOfTheDayAge) {
-      return <AiOutlineArrowDown/>
+      return <AiOutlineArrowDown />
     } else if (age < playerOfTheDayAge) {
-      return <AiOutlineArrowUp/>
-    } 
+      return <AiOutlineArrowUp />
+    }
   }
 
   useEffect(() => {
@@ -42,19 +42,23 @@ const PlayerBox = ({ player, playerOfTheDay, changeStateTrue }) => {
 
   return (
     // <div>{player.name}</div>
-    <div className='grid grid-cols-5 border-[rgb(25,25,25)] border-t-4 bg-black w-screen lg:w-[50rem]'>
-      <div className={`${(player.name === playerOfTheDay.name) ? 'bg-green-600' : null} flex justify-center py-10 text-white`}>{player?.name}</div>
-      {/* <div>{player?.name}</div> */}
-      <div className={`${(player.playerPosition === playerOfTheDay.playerPosition) ? 'bg-green-600' : null} flex justify-center py-10 text-white`}>{player.playerPosition}</div>
-      <div className={`${(player.team === playerOfTheDay.team) ? 'bg-green-600' : null} flex justify-center py-10 text-white`}>{player.team}</div>
-      <div className={`${(age === playerOfTheDayAge) ? 'bg-green-600' : null} flex justify-center py-10 text-white`}>{`${age}`}
-        <div className='flex self-center'>
-          {decidingArrowForAge()}
+    <div className='border-t-4 border-[rgb(25,25,25)]'>
+      {/* <div></div> */}
+      <div className={`${(player.name === playerOfTheDay.name) ? 'bg-green-600' : null} flex bg-[rgb(25,25,25)] border-black  text-white justify-center font-bold`}>{player?.name}</div>
+      <div className='grid grid-cols-5  bg-black w-screen lg:w-[50rem]'>
+        {/* <div>{player?.name}</div> */}
+        <div className={`${(player.playerPosition === playerOfTheDay.playerPosition) ? 'bg-green-600' : null} flex justify-center py-10 text-white`}>{player.playerPosition}</div>
+        <div className={`${(player.team === playerOfTheDay.team) ? 'bg-green-600' : null} flex justify-center py-10 text-white`}>{player.team}</div>
+        <div className={`${(age === playerOfTheDayAge) ? 'bg-green-600' : null} flex justify-center py-10 text-white`}>{`${age}`}
+          <div className='flex self-center'>
+            {decidingArrowForAge()}
+          </div>
         </div>
+        <div className={`${changingColorForTeamCOrrect()} flex justify-center py-10 text-white`}>{`${teams[player.team].confrence} ${teams[player.team].division}`}</div>
+        {/* <div className={`${(player.age === playerOfTheDay.age) ? 'bg-green-600' : null} flex justify-center py-10`}>{teams[`${player.team}}`].division}</div> */}
       </div>
-      <div className={`${changingColorForTeamCOrrect()} flex justify-center py-10 text-white`}>{`${teams[player.team].confrence} ${teams[player.team].division}`}</div>
-      {/* <div className={`${(player.age === playerOfTheDay.age) ? 'bg-green-600' : null} flex justify-center py-10`}>{teams[`${player.team}}`].division}</div> */}
     </div>
+
   );
 }
 
