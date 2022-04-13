@@ -5,6 +5,7 @@ import PlayerBox from '../components/PlayerBox';
 import Title from '../components/Title';
 import HeaderForPlayerBox from '../components/HeaderForPlayerBox';
 import { borderColor } from '@mui/system';
+import Link from 'next/link';
 
 const Unlimited = () => {
   //importing all the players from the JSON file
@@ -148,6 +149,10 @@ const Unlimited = () => {
             {(choiceEight === null) ? null : (<PlayerBox player={choiceEight} playerOfTheDay={playerOfTheDay} changeStateTrue={changeCorrectTrue} />)}
           </div>
         </div>
+      </div>
+      <div className='mt-7'>
+        <div className='text-white text-center'>created by: <Link href={'https://www.linkedin.com/in/mchitrapu/'}><a className='underline'>Mahith Chitrapu</a></Link></div>
+        <div className='text-white text-center'>inspired by the original: <Link href={'https://weddlegame.com'}><a className='underline'>Weddle</a></Link></div>
       </div>
     </div>
   )

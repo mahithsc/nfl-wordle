@@ -5,7 +5,7 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import PlayerBox from '../components/PlayerBox';
 import HeaderForPlayerBox from '../components/HeaderForPlayerBox';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const PlayingWithFriends: NextPage = () => {
     //importing all the players from the JSON file
@@ -75,7 +75,7 @@ const PlayingWithFriends: NextPage = () => {
 
     return (
         <div className='min-h-screen bg-[rgb(25,25,25)]'>
-            <Title/>
+            <Title />
             <div className='h-16'></div>
             <div></div>
             <div>
@@ -122,6 +122,10 @@ const PlayingWithFriends: NextPage = () => {
                         {(choiceEight === null) ? null : (<PlayerBox player={choiceEight} playerOfTheDay={playerOfTheDay} changeStateTrue={changeCorrectTrue} />)}
                     </div>
                 </div>
+            </div>
+            <div className='mt-7'>
+                <div className='text-white text-center'>created by: <Link href={'https://www.linkedin.com/in/mchitrapu/'}><a className='underline'>Mahith Chitrapu</a></Link></div>
+                <div className='text-white text-center'>inspired by the original: <Link href={'https://weddlegame.com'}><a className='underline'>Weddle</a></Link></div>
             </div>
         </div>
     )
