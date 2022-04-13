@@ -1,5 +1,5 @@
-import { Autocomplete, dividerClasses, TextField } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import { Autocomplete, TextField } from '@mui/material'
+import React, {useState } from 'react'
 import Link from 'next/link'
 import Title from '../components/Title'
 
