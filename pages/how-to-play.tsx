@@ -24,11 +24,6 @@ const HowToPlay = () => {
             </div>
           </div>
 
-          {/* <div className='bg-black p-5 rounded-xl mt-5'>
-            <div className='font-bold text-2xl'>so how do I guess</div>
-            <div className='mt-5'>use the searchbar to find the player you are thinking about and select him. you will have 7 tried to guesse the secret player. </div>
-          </div> */}
-
           <div className='bg-black p-5 rounded-xl mt-5'>
             <div className='font-bold text-2xl'>how to play waddle</div>
             <div className='mt-5'>
