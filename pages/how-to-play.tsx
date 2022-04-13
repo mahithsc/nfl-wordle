@@ -30,8 +30,10 @@ const HowToPlay = () => {
             <div className='mt-5'>
               <li className='mb-2'>you have 7 guesses to get the right player</li>
               <li className='mb-2'>use the search bar to find the player that you're thinking off</li>
-              <li className='mb-2'> <span className='bg-green-500 p-1 text-black'>green</span> column means that that metric is exactly correct</li>
-              <li> <span className='bg-yellow-500 p-1 text-black'>yellow</span> column means that that metric is off by one</li>
+              <li className='mb-2'> <span className='bg-green-500 p-1 text-black'>green</span> square means that that metric is exactly correct</li>
+              <li> <span className='bg-yellow-500 p-1 text-black'>yellow</span> square means that that metric is close but not exactly ex. if you chose a player in the right confrence but not correct division the square will be yellow</li>
+              <li className='mb-2'>once your 7 guesses are up or you get the correct player, click generate new player to play again!</li>
+              
             </div>
           </div>
 
