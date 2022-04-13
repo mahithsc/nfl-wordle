@@ -1,5 +1,6 @@
 import { Autocomplete, dividerClasses, TextField } from '@mui/material'
 import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
 import Title from '../components/Title'
 
 const PlayerSelection = () => {
@@ -28,29 +29,30 @@ const PlayerSelection = () => {
 
     return (
         <div className='min-h-screen bg-[rgb(25,25,25)]'>
-            <Title/>
+            <Title />
             <div className='h-16'></div>
-      <div>
-        <div className='text-center text-white text-5xl'>waddle <div className='text-xl mt-2'>vs. friends</div></div>
-        {/* <div className='text-center flex-wrap text-white'>you can keep generating new players, and you have 7 tries to guesse each player. let&apos;s see if you can get it!</div> */}
-      </div>
+            <div>
+                <div className='text-center text-white text-5xl'>waddle <div className='text-xl mt-2'>vs. friends</div></div>
+                {/* <div className='text-center flex-wrap text-white'>you can keep generating new players, and you have 7 tries to guesse each player. let&apos;s see if you can get it!</div> */}
+            </div>
             <div className='flex flex-col items-center mt-11'>
                 <Autocomplete
-                style={{
-                    borderColor: '#ffffff',
-                    borderWidth: '1px',
-                    borderRadius: '5px',
-                    backgroundColor: 'white'
-                  }}
+                    style={{
+                        borderColor: '#ffffff',
+                        borderWidth: '1px',
+                        borderRadius: '5px',
+                        backgroundColor: 'white'
+                    }}
                     className='sm:w-[35rem] w-screen mx-1'
                     disablePortal
                     id="free-solo-demo"
                     options={players}
                     getOptionLabel={(option: any) => option?.name}
                     //when an option is selected, set the state of the choice
-                    onChange={(event: any, newValue: string | null) => { 
-                        setChoice(newValue) 
-                        setSelected(false)}}
+                    onChange={(event: any, newValue: string | null) => {
+                        setChoice(newValue)
+                        setSelected(false)
+                    }}
                     renderInput={(params) => <TextField {...params} />}
                 />
             </div>
@@ -61,12 +63,16 @@ const PlayerSelection = () => {
             </div>) : null}
 
             {choice !== null ? (<div className='flex justify-center mt-8'>
-                <button className={`${!selected?'bg-black': 'bg-green-500'} text-white  px-5 py-2 rounded-xl mb-10 md:w-[35rem] md:h-14 w-screen mx-16 h-14`} onClick={() => {
+                <button className={`${!selected ? 'bg-black' : 'bg-green-500'} text-white  px-5 py-2 rounded-xl mb-10 md:w-[35rem] md:h-14 w-screen mx-16 h-14`} onClick={() => {
                     encrypt(choice.name)
                 }}>
-                    {!selected?(<div>copy link</div>):<div>copied!</div>}
+                    {!selected ? (<div>copy link</div>) : <div>copied!</div>}
                 </button>
             </div>) : null}
+            <div className='mt-7'>
+                <div className='text-white text-center'>created by: <Link href={'https://www.linkedin.com/in/mchitrapu/'}><a className='underline'>Mahith Chitrapu</a></Link></div>
+                <div className='text-white text-center'>inspired by the original: <Link href={'https://weddlegame.com'}><a className='underline'>Weddle</a></Link></div>
+            </div>
 
         </div>
     )

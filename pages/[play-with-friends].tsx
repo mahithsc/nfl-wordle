@@ -5,7 +5,6 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import PlayerBox from '../components/PlayerBox';
 import HeaderForPlayerBox from '../components/HeaderForPlayerBox';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 const PlayingWithFriends: NextPage = () => {
