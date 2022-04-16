@@ -11,8 +11,6 @@ const Unlimited = () => {
   //importing all the players from the JSON file
   const players = require('../assets/players_datbase.json')
 
-  const [input, setInput] = useState("")
-
   //state variables for the players
   const [choice, setChoice]: any = useState(null)
   const [choiceTwo, setChoiceTwo]: any = useState(null)
@@ -105,7 +103,7 @@ const Unlimited = () => {
             borderColor: '#ffffff',
             borderWidth: '1px',
             borderRadius: '5px',
-            backgroundColor: 'white'
+            backgroundColor: 'white',
           }}
           disabled={correct}
           className='sm:w-[35rem] w-screen mx-1'
