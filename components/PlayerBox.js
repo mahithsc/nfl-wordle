@@ -44,7 +44,7 @@ const PlayerBox = ({ player, playerOfTheDay, changeStateTrue }) => {
     <>
 
     {/* this is the block for small screen */}
-      <div className='border-t-8 border-[rgb(25,25,25)]'>
+      <div className='border-t-8 border-[rgb(25,25,25)] md:hidden'>
         <div className={`${(player.name === playerOfTheDay.name) ? 'bg-green-600' : null} flex border-black bg-black  text-white font-bold pt-2 pl-2 pb-2`}>{player?.name}</div>
         <div className='grid grid-cols-4  bg-black w-screen lg:w-[50rem] border-t-[rgb(204, 204, 204)] border-t-2'>
           {/* <div className={`${(player.playerPosition === playerOfTheDay.playerPosition) ? 'bg-green-600' : null} flex justify-center py-10 text-white`}>{player.playerPosition}</div> */}
@@ -60,7 +60,7 @@ const PlayerBox = ({ player, playerOfTheDay, changeStateTrue }) => {
       </div>
 
       {/* block for large screens */}
-      {/* <div className='border-t-8 border-[rgb(25,25,25)]'>
+      <div className='border-t-8 border-[rgb(25,25,25)] hidden md:block'>
         <div className={`${(player.name === playerOfTheDay.name) ? 'bg-green-600' : null} flex border-black bg-black  text-white font-bold pt-2 pl-2 pb-2`}>{player?.name}</div>
         <div className='grid grid-cols-5  bg-black w-screen lg:w-[50rem] border-t-[rgb(204, 204, 204)] border-t-2'>
           <div className={`${(player.playerPosition === playerOfTheDay.playerPosition) ? 'bg-green-600' : null} flex justify-center py-10 text-white`}>{player.playerPosition}</div>
@@ -73,7 +73,7 @@ const PlayerBox = ({ player, playerOfTheDay, changeStateTrue }) => {
           </div>
           <div className={`${changingColorForTeamCOrrect()} flex justify-center py-10 text-white`}>{`${teams[player.team].confrence} ${teams[player.team].division}`}</div>
         </div>
-      </div> */}
+      </div>
     </>
 
 
