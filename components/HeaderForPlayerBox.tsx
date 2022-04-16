@@ -13,13 +13,13 @@ const HeaderForPlayerBox = () => {
             </div>
 
             {/* this is the for larger screebs */}
-            {/* <div className='grid grid-cols-5 w-screen lg:w-[50rem]'>
-                <div className='flex justify-center text-white'>draft class</div>
+            <div className='grid grid-cols-5 w-screen lg:w-[50rem]'>
+                <div className='flex justify-center text-white'>name</div>
                 <div className='flex justify-center text-white'>position</div>
                 <div className='flex justify-center text-white'>team</div>
                 <div className='flex justify-center text-white'>age</div>
                 <div className='flex justify-center text-white'>division</div>
-            </div> */}
+            </div>
         </>
         // <div>{player.name}</div>
 
