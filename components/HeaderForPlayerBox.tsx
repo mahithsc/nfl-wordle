@@ -16,7 +16,7 @@ const HeaderForPlayerBox = () => {
 
             {/* this is the for larger screens */}
             <div className='hidden md:block'>
-            <div className=' grid grid-cols-5 w-screen lg:w-[50rem]'>
+            <div className=' grid grid-cols-5 w-screen md:w-[50rem]'>
                 <div className='flex justify-center text-white'>name</div>
                 <div className='flex justify-center text-white'>position</div>
                 <div className='flex justify-center text-white'>team</div>
