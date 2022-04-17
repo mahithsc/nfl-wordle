@@ -90,7 +90,7 @@ const Unlimited = () => {
 
   return (
     <div className='min-h-screen bg-[rgb(25,25,25)]'>
-      <Title/>
+      <Title />
       <div className='h-16'></div>
       <div>
         <div className='text-center text-white text-5xl'>waddle <div className='text-xl mt-2'>unlimited</div></div>
@@ -99,12 +99,12 @@ const Unlimited = () => {
 
       <div className='flex flex-col items-center mt-11'>
         <Autocomplete
-        style={{
-          borderColor: '#ffffff',
-          borderWidth: '1px',
-          borderRadius: '5px',
-          backgroundColor: 'white'
-        }}
+          style={{
+            borderColor: '#ffffff',
+            borderWidth: '1px',
+            borderRadius: '5px',
+            backgroundColor: 'white',
+          }}
           disabled={correct}
           className='sm:w-[35rem] w-screen mx-1'
           disablePortal
@@ -130,10 +130,10 @@ const Unlimited = () => {
             generate new player
           </button> */}
           <button className={`text-white  px-5 py-2 rounded-xl mb-10 md:w-[35rem] md:h-14 w-screen mx-16 h-14 bg-black hover:bg-green-500`} onClick={() => {
-                    generateNewPlayer()
-                }}>
+            generateNewPlayer()
+          }}>
             generate new player
-                </button>
+          </button>
         </div>) : null
         }
         <div className='flex flex-col mt-10 flex-1 items-center'>
