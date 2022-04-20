@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Title from '../components/Title';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -11,7 +12,11 @@ const Home: NextPage = () => {
     router.push('/unlimited');
   })
   return (
-    <div></div>
+    <div>
+      <Head>
+        <title>Waddle Game</title>
+      </Head>
+    </div>
     
     // <div className='flex flex-col h-screen w-screen bg-black'>
     //   <Title />
