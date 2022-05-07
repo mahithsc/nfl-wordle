@@ -49,6 +49,7 @@ const HowToPlay = () => {
       <div className='mt-7'>
         <div className='text-white text-center'>created by: <Link href={'https://www.linkedin.com/in/mchitrapu/'}><a className='underline'>Mahith Chitrapu</a></Link></div>
         <div className='text-white text-center'>inspired by the original: <Link href={'https://weddlegame.com'}><a className='underline'>Weddle</a></Link></div>
+        <div className='text-white text-center'>link to code/github: <Link href={'https://github.com/mahithsc/nfl-wordle'}><a className='underline'>Mahith Chitrapu</a></Link></div>
       </div>
 
 
