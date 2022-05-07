@@ -15,6 +15,7 @@ const Home: NextPage = () => {
     <div>
       <Head>
         <title>Waddle Game</title>
+        <link rel="icon" href = '../assets/22171.vresize.350.350.medium.81.png'/>
       </Head>
     </div>
     
